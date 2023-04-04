@@ -79,8 +79,11 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: new_little_middle_production
+#   username: new_little_middle
+#   password: <%= ENV["NEW_LITTLE_MIDDLE_DATABASE_PASSWORD"] %>
 production:
   <<: *default
-  database: new_little_middle_production
-  username: new_little_middle
-  password: <%= ENV["NEW_LITTLE_MIDDLE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
