@@ -11,3 +11,519 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.form-label {
+  margin-right: 10px;
+  justify-content: left;
+}
+
+.boldText {
+  font-weight: bolder;
+}
+
+.form-subtitle {
+  font-family: fantasy;
+  font-size: 20px;
+  color: rgb(206, 162, 133);
+  text-shadow: 1px 1px black;
+  letter-spacing: 2px;
+  margin: 0 0 2rem 0;
+  font-weight: bold;
+}
+
+.form-couplet {
+  padding-bottom: 40px;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  /* flex-direction: row; */
+}
+
+.width70{
+  width: 70%;
+}
+
+.form-heading{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+form {
+  font-family: fantasy;
+  font-size: 22px;
+  letter-spacing: 1.1px;
+  margin-bottom: 2rem;
+}
+
+.centerContent{
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.font {
+  font-family: fantasy;
+}
+
+.form-date {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+input {
+  border-bottom: 1px solid black;
+  padding-right: 60px;
+  border-top: 0;
+  border-left: 0;
+  margin-left: 10px;
+  border-right: 0;
+}
+
+.paddingB30{
+  padding-bottom: 30px;
+}
+
+.paddingT20{
+  padding-top: 20px;
+}
+
+.form-spacing {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.flexBoxColumn {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  margin-right: 1rem;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  /* margin-left: 2%; */
+}
+
+@media only screen and (max-width: 500px) {
+  .flexBoxColumn {
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.flexBoxRow {
+  margin: 10px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  .flexBoxRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.flexBoxRowNav {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 500px) {
+  .flexBoxRowNav {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.flexBoxRowNavTabs {
+  justify-content: end;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .flexBoxRowNavTabs {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+  }
+}
+
+.navFont {
+  color: rgb(113, 77, 22);
+  font-weight: 500;
+  margin-left: 2rem;
+  font-size: 18px;
+  font-family: fantasy;
+  letter-spacing: 1.3px;
+}
+
+@media only screen and (max-width: 500px) {
+  .navFont {
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+/* a{
+  margin-left: 4rem;
+  font-size: 18px;
+  font-family: fantasy;
+  letter-spacing: 1.6px;
+} */
+
+.flexBoxColNav {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo-img-container {
+  width: 750px;
+  height: 730px;
+  /* margin-right: 20px; */
+}
+
+@media only screen and (max-width: 500px) {
+  .logo-img-container {
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 340px;
+    margin-bottom: 2rem;
+  }
+}
+
+.logo-image {
+  background-image: url('images/challah-logo.png');
+  background-size: cover;
+  height: 100%;
+}
+
+.title-text {
+  font-family: fantasy;
+  letter-spacing: 1.5px;
+  font-size: 47px;
+  margin: 0;
+  margin-top: 1rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  /* color: rgb(206, 162, 133);
+  text-shadow: 2px 1px black; */
+}
+
+@media only screen and (max-width: 500px) {
+  .title-text {
+    font-size: 33px;
+    font-weight: 600;
+    /* margin-top: 1rem; */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px black;
+  }
+}
+
+.flexBoxColumnInfo {
+  flex-direction: column;
+  /* width: 100%; */
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  margin: 0 3rem 1rem 3rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .flexBoxColumnInfo {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+}
+
+
+.info-blurb {
+  font-size: 22px;
+  font-family: fantasy;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+  margin-top: 0;
+  letter-spacing: .7px;
+  /* text-align: left;
+  justify-content: center; */
+}
+
+@media only screen and (max-width: 500px) {
+  .info-blurb {
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 1.1px;
+    margin-bottom: 1.7rem;
+  }
+}
+
+.navBarLayout {
+  margin: 1rem 2rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .navBarLayout {
+    margin: 2rem;
+  }
+}
+
+.aboutText {
+  margin-left: 2rem;
+}
+
+#navBarLMCName {
+  text-decoration: none;
+  color: rgb(206, 162, 133);
+  text-shadow: 2px 1px black;
+}
+
+.pageTitle {
+  color: rgb(206, 162, 133);
+  text-shadow: 1.5px 1px black;
+  font-family: fantasy;
+  font-size: 37px;
+  font-weight: normal;
+  letter-spacing: 1.8px;
+  margin-top: 3rem;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+/* .imageContainer {
+  height: 500px;
+  width: 300px;
+  display: flex;
+  margin: 2rem 2rem 2rem 2rem;
+  align-items: center;
+} */
+
+.oneImageContainer {
+  height: 480px;
+  width: 320px;
+  flex-direction: column;
+  margin: 2rem 2rem 2rem 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .oneImageContainer {
+    height: 360px;
+    width: 280px;
+    margin: 1rem;
+  }
+}
+
+.imageStyle {
+  background-size: cover;
+  position: center;
+  image-orientation: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+  width: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .imageStyle {
+    height: 310px;
+    width: auto;
+    margin: 1rem;
+  }
+}
+
+.imageCaption {
+  font-family: fantasy;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .imageCaption {
+    font-size: 12px;
+  }
+}
+
+#pic1 {
+  align-self: center;
+  background-image: url('images/challah0.jpeg');
+}
+
+#pic2 {
+  background-image: url('images/challah00.JPG');
+}
+
+#pic3 {
+  background-image: url('images/challah1.jpeg');
+}
+
+#pic4 {
+  background-image: url('images/challah2.jpeg');
+}
+
+#pic5 {
+  background-image: url('images/challah3.PNG');
+}
+
+#pic6 {
+  background-image: url('images/challah4.jpeg');
+}
+
+#pic7 {
+  background-image: url('images/challah5.jpeg');
+}
+
+#pic8 {
+  background-image: url('images/challah6.jpeg');
+}
+
+#pic9 {
+  background-image: url('images/challah7.jpg');
+}
+
+#pic10 {
+  background-image: url('images/challah8.jpg');
+}
+
+#pic11 {
+  background-image: url('images/challah9.png');
+}
+
+.flexRowGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  place-items: center;
+  /* height: 400px; */
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  .flexRowGrid {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+input#firstName,
+input#lastName,
+input#phone,
+input#email,
+input#plainFlavor,
+input#chocChipFlavor,
+input#donation {
+  padding-left: 20px;
+  font-family: fantasy;
+  font-size: 17px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.donorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.centerText{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.uppercaseText{
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight:lighter;
+  line-height: 1.4;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  /* justify-content: flex-end; */
+  align-items: left;
+  text-align: left;
+}
+
+/* @media only screen and (max-width: 500px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
+.subtitleBlurb {
+  margin: 0 4rem;
+  font-family: fantasy;
+  font-size: 17.5px;
+  line-height: 2;
+  letter-spacing: 1.5px;
+}
+
+.formSubmitBtn{
+  background-color: white;
+  padding: 15px 30px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: rgb(206, 162, 133);
+  font-family: fantasy;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px black;
+  border: 3px solid rgb(206, 162, 133);
+}

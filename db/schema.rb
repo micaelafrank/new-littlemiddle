@@ -10,19 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_04_233242) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_05_045306) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choc_challahs", force: :cascade do |t|
+    t.integer "quantity", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.string "firstName"
     t.string "lastName"
     t.string "email"
     t.string "phone"
-    t.integer "chocChipFlavor", default: 0
-    t.integer "plainFlavor", default: 0
     t.integer "donation", default: 0
+    t.integer "choc_challah_id"
+    t.integer "plain_challah_id"
     t.integer "sale_date_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plain_challahs", force: :cascade do |t|
+    t.integer "quantity", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

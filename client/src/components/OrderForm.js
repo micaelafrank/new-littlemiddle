@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Payment from "./Payment";
+// import Payment from "./Payment";
 import NavBar from "./NavBar";
 
 function OrderForm() {
@@ -55,125 +55,130 @@ function OrderForm() {
     return (
         <>
             <NavBar />
-            <form onSubmit={handleSubmit} className="form-spacing">
-                <div className="form-couplet form-date">
-                    <p style={{ fontFamily: "monospace" }}>insert braid detail image here</p>
-                    <h1 className="pageTitle">Order Form</h1>
-                    <p className="form-subtitle boldText">{friDate}</p>
-                </div>
-                <p>Order forms open every Sunday at 12:00 PM PT and close on Thursdays at 5:00 PM PT.</p>
-                <div className="form-couplet">
-                    <label className="form-label">First Name:</label>
-                    <input type="text"
-                        placeholder="First Name"
-                        name="firstName"
+            <form 
+            // onSubmit={handleSubmit} 
+            className="form-spacing">
+                <div className="centerContent">
+                    <div className="form-heading form-date">
+                        <p style={{ fontFamily: "monospace" }}>insert braid detail image here</p>
+                        <h1 className="pageTitle">Order Form</h1>
+                        <p className="form-subtitle boldText">{friDate}</p>
+                    </div>
+                    <p className="centerText uppercaseText width70 paddingB30">Order forms open every Sunday at 12:00 PM PT and close on Thursdays at 5:00 PM PT.<br>
+                    </br><span><i>*Maximum of 4 challahs total*</i></span></p>
+                    <div className="form-couplet">
+                        <label className="form-label">First Name:</label>
+                        <input type="text"
+                            placeholder="First Name"
+                            name="firstName"
+                            require="true"
+                            id="firstName"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)} />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Last Name:</label>
+                        <input type="text" require="true"
+                            placeholder="Last Name"
+                            name="lastName"
+                            id="lastName"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                        />
+                    </div>
+                    {/* <div className="form-couplet">
+                        <label className="form-label">Street Address:</label>
+                        <input type="text" require="true" placeholder="Street Address"
+                        name="address1"
+                        id="address1"
+                        value={address1}
+                        onChange={(e) => setAddress1(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Floor/Suite/Apartment Number:</label>
+                        <input type="text" 
+                        placeholder="Address 2"
+                        name="address2"
+                        id="address2"
+                        value={address2}
+                        onChange={(e) => setAddress2(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">City:</label>
+                        <input type="text" placeholder="City"
                         require="true"
-                        id="firstName"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)} />
+                        name="city"
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Zip Code:</label>
+                        <input type="number" placeholder="Zip Code"
+                        require="true" 
+                        name="zipCode"
+                        id="zipCode"
+                        value={zipCode}
+                        onChange={(e) => setZipCode(e.target.value)}
+                        />
+                    </div> */}
+                    <div className="form-couplet">
+                        <label className="form-label">Email:</label>
+                        <input type="email" placeholder="Email"
+                            require="true"
+                            name="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Phone Number:</label>
+                        <input type="tel" placeholder="Phone Number"
+                            name="phone"
+                            id="phone"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Number of Olive Oil Rosemary Challahs:</label>
+                        <input type="number" require="true"
+                            name="plainFlavor" style={{ paddingRight: "0" }}
+                            id="plainFlavor"
+                            placeholder="0"
+                            value={plainFlavor}
+                            onChange={(e) => setPlainFlavor(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Number of Chocolate Chip Challahs:</label>
+                        <input type="number" require="true" placeholder="0"
+                            name="chocChipFlavor" style={{ paddingRight: "0" }}
+                            id="chocChipFlavor"
+                            value={chocChipFlavor}
+                            onChange={(e) => setChocChipFlavor(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-couplet">
+                        <label className="form-label">Donation pledge:</label>
+                        <input
+                            type="number" require="true" placeholder="$"
+                            name="donation"
+                            id="donation"
+                            value={donation}
+                            onChange={(e) => setDonation(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className="form-couplet">
-                    <label className="form-label">Last Name:</label>
-                    <input type="text" require="true"
-                        placeholder="Last Name"
-                        name="lastName"
-                        id="lastName"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                    />
+                    {/* <button onClick={togglePayment}>Submit Payment of ${newDonation}</button> */}
+                    {/* {showCheckout ? <StripeContainer total={newDonation} /> : null} */}
+                <div className="centerText paddingT20">
+                    <button className="formSubmitBtn" type="submit">Submit Order</button>
                 </div>
-                {/* <div className="form-couplet">
-                    <label className="form-label">Street Address:</label>
-                    <input type="text" require="true" placeholder="Street Address"
-                    name="address1"
-                    id="address1"
-                    value={address1}
-                    onChange={(e) => setAddress1(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">Floor/Suite/Apartment Number:</label>
-                    <input type="text" 
-                    placeholder="Address 2"
-                    name="address2"
-                    id="address2"
-                    value={address2}
-                    onChange={(e) => setAddress2(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">City:</label>
-                    <input type="text" placeholder="City"
-                    require="true"
-                    name="city"
-                    id="city"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">Zip Code:</label>
-                    <input type="number" placeholder="Zip Code"
-                    require="true" 
-                    name="zipCode"
-                    id="zipCode"
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
-                    />
-                </div> */}
-                <div className="form-couplet">
-                    <label className="form-label">Email:</label>
-                    <input type="email" placeholder="Email"
-                        require="true"
-                        name="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">Phone Number:</label>
-                    <input type="tel" placeholder="Phone Number"
-                        name="phone"
-                        id="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
-                </div>
-                <p className="font" style={{ paddingBottom: "18px", margin: "0" }}><i>**Maximum of 4 challahs total:</i></p>
-                <div className="form-couplet">
-                    <label className="form-label">Olive Oil Rosemary Challah Quantity:</label>
-                    <input type="number" require="true"
-                        name="plainFlavor" style={{ paddingRight: "0" }}
-                        id="plainFlavor"
-                        placeholder="0"
-                        value={plainFlavor}
-                        onChange={(e) => setPlainFlavor(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">Chocolate Chip Challah Quantity:</label>
-                    <input type="number" require="true" placeholder="0"
-                        name="chocChipFlavor" style={{ paddingRight: "0" }}
-                        id="chocChipFlavor"
-                        value={chocChipFlavor}
-                        onChange={(e) => setChocChipFlavor(e.target.value)}
-                    />
-                </div>
-                <div className="form-couplet">
-                    <label className="form-label">Donation pledge:</label>
-                    <input
-                        type="number" require="true" placeholder="$"
-                        name="donation"
-                        id="donation"
-                        value={donation}
-                        onChange={(e) => setDonation(e.target.value)}
-                    />
-                </div>
-                {/* <button onClick={togglePayment}>Submit Payment of ${newDonation}</button> */}
-                {/* {showCheckout ? <StripeContainer total={newDonation} /> : null} */}
-
-                <button type="submit">Submit Order</button>
             </form>
             {/* {showPayment ? <Payment donation={donation}/> : null}  */}
         </>
