@@ -7,6 +7,25 @@ rescue_from ActiveRecord::RecordInvalid, with: :date_invalid
         render json: date
     end
 
+    def get_friday
+        today = Date.today
+        friday = today.next_occurring(:friday)
+        render json: friday 
+    end
+
+    def get_next_sunday
+        today = Date.today
+        sunday = today.next_occurring(:sunday)
+        render json: sunday
+    end
+
+    def get_thursday
+        today = Date.today
+        thursday = today.next_occurring(:thursday)
+        render json: thursday
+    end
+
+
     private 
 
     def cant_find_date
