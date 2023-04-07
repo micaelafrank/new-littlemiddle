@@ -336,6 +336,17 @@ input {
   text-align: center;
 }
 
+.donorTitle{
+  color: rgb(206, 162, 133);
+  text-shadow: 1px 1px black;
+  font-family: fantasy;
+  font-size: 26px;
+  margin-bottom: 0.4rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
 /* .imageContainer {
   height: 500px;
   width: 300px;
@@ -515,7 +526,7 @@ input#donation {
 } */
 
 .subtitleBlurb {
-  margin: 0 4rem;
+  margin: 1rem 5rem 2rem 5rem;
   font-family: fantasy;
   font-size: 17.5px;
   line-height: 2;

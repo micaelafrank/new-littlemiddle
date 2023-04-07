@@ -4,7 +4,7 @@ import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
 // import About from "./About";
 import ImageGallery from './ImageGallery';
-// import Donations from './Donations';
+import Donations from './Donations';
 import ConfirmOrder from './ConfirmOrder';
 // import NavBar from './NavBar';
 import WithNav from './WithNav';
@@ -37,7 +37,7 @@ function App() {
           <Route path="/order" element={<OrderForm friDate={friDate} />} />
           <Route path="/gallery" element={<ImageGallery />} />
           <Route path="/confirmation" element={<ConfirmOrder friDate={friDate}/>} />
-          {/* <Route path="/donations" element={<Donations />} /> */}
+          <Route path="/donations" element={<Donations />} />
         </Route>
       </Routes>
     </div>
