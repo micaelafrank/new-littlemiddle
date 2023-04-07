@@ -29,9 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_04_233242) do
   end
 
   create_table "sale_dates", force: :cascade do |t|
-    t.integer "month"
-    t.integer "day"
-    t.integer "year"
+    t.string "date" 
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,11 +1,10 @@
 import React from "react";
-import NavBar from "./NavBar";
 
 
 function ImageGallery() {
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
             <h1 className="pageTitle">Image Gallery</h1>
             <div className="flexRowGrid">
                 <div className="oneImageContainer">

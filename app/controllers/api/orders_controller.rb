@@ -24,7 +24,7 @@ class Api::OrdersController < ApplicationController
     private
 
     def order_params
-        params.permit(:id, :sale_date, :firstName, :lastName, :email, :phone, :choc_challah_count, :plain_challah_count, :donation)
+        params.permit(:id, :firstName, :lastName, :email, :phone, :choc_challah_count, :plain_challah_count, :donation)
     end
     
 
