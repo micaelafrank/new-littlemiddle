@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from './NavBar';
 
 
 function Home({ friDate, nextSunDate }) {
@@ -13,9 +12,11 @@ function Home({ friDate, nextSunDate }) {
                     </div>
                 </div>
                 <div className="flexBoxColumnInfo">
-                    <p className="info-blurb paddingB4rem">Orders for {friDate} are now closed. Visit us on {nextSunDate} to place your order for next week!</p>
-                    <p className="info-blurb">A selection of flavors kneaded and baked fresh every Friday.</p>
-                    <p className="info-blurb">Donate what you can — 100% of what's earned goes directly to a charity helping communities in need.</p>
+                    <p className="info-blurb">Kneading freshly baked challahs for communities in need.</p>
+                    {/* <p className="info-blurb">A selection of flavors kneaded and baked fresh every Friday.</p> */}
+                    <p className="info-blurb">Pay what you can — we donate 100% of what's earned.</p>
+                    <p className="paddingB4rem">Orders for this Friday, {friDate}, are now closed. Our order form will reopen on Sunday, {nextSunDate}.</p>
+                    {/* <p className="info-blurb">Donate what you can — 100% of what's earned goes directly to a charity helping communities in need.</p> */}
                     {/* <p className="info-blurb">Order forms open every Sunday for pick up on the following Friday.</p> */}
                 </div>
             </div>
