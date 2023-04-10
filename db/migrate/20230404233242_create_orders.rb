@@ -1,10 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[7.0]
   def change
     create_table :orders do |t|
-      t.string :firstName
-      t.string :lastName
-      t.string :email 
-      t.string :phone
+      t.string :user_id 
       t.integer :donation, :default => 0
       t.integer :choc_challah_count, :default => 0
       t.integer :plain_challah_count, :default => 0

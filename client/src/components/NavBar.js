@@ -10,6 +10,7 @@ function NavBar() {
                 <div className="flexBoxRowNavTabs">
                     {/* flexBoxColNav" */}
                     <NavLink className="navFont" to="/about">About</NavLink>
+                    <NavLink className="navFont" to="/login">Login</NavLink>
                     <NavLink className="navFont" to="/order">Order form</NavLink>
                     <NavLink className="navFont" to="/gallery">Image gallery</NavLink>
                     <NavLink className="navFont" to="/donations">Where we donate</NavLink>

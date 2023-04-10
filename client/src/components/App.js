@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './Home';
+import Login from './Login';
 import OrderForm from './OrderForm';
 import { Route, Routes } from 'react-router-dom';
 // import About from "./About";
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route element={<WithNav />}>
           <Route path="/" element={<Home friDate={friDate} nextSunDate={nextSunDate} />} />
+          <Route path="/login" element={<Login />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/order" element={<OrderForm friDate={friDate} />} />
           <Route path="/gallery" element={<ImageGallery />} />

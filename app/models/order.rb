@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
     # belongs_to :sale_date
-    # belongs_to :user 
+    belongs_to :user 
 
     validates :firstName, presence: true
     validates :lastName, presence: true

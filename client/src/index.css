@@ -283,6 +283,40 @@ input {
   }
 }
 
+.loginCouplet{
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 2rem;
+}
+
+.loginLabel{
+  margin-right: .5rem;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.loginInput{
+  font-family: fantasy;
+  letter-spacing: 1.6px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+
+.flexBoxColumnLoginInfo {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  margin: 0 2rem;
+}
+
+
 
 .info-blurb {
   font-size: 21px;
@@ -322,6 +356,17 @@ input {
   text-decoration: none;
   color: rgb(206, 162, 133);
   text-shadow: 2px 1px black;
+}
+
+.loginTitle{
+    color: rgb(206, 162, 133);
+    text-shadow: 1.5px 1px black;
+    font-family: fantasy;
+    font-size: 37px;
+    font-weight: normal;
+    letter-spacing: 1.8px;
+    margin-bottom: 1.6rem;
+    text-align: center;
 }
 
 .pageTitle {
@@ -531,6 +576,28 @@ input#donation {
   font-size: 17.5px;
   line-height: 2;
   letter-spacing: 1.5px;
+}
+
+.loginSubmitBtn{
+  background-color: white;
+  padding: 10px 20px;
+  align-items: center;
+  margin-top: .8rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: black;
+  font-family: fantasy;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: 1px solid black;
+}
+
+.loginSubmitBtn:hover {
+  background-color: rgb(243, 224, 210);
+  cursor: pointer;
+  font-weight: bold;
+  border: 2px solid black;
 }
 
 .formSubmitBtn{
