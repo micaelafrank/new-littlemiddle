@@ -9,6 +9,8 @@ import Donations from './Donations';
 import ConfirmOrder from './ConfirmOrder';
 // import NavBar from './NavBar';
 import WithNav from './WithNav';
+import SignUp from './SignUp';
+
 
 function App() {
   const curr = new Date();
@@ -35,6 +37,7 @@ function App() {
         <Route element={<WithNav />}>
           <Route path="/" element={<Home friDate={friDate} nextSunDate={nextSunDate} />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/order" element={<OrderForm friDate={friDate} />} />
           <Route path="/gallery" element={<ImageGallery />} />

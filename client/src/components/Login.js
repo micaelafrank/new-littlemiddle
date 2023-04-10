@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     return (
         <div className="homepage-layout">
@@ -38,8 +40,11 @@ function Login() {
                             id="password"/>
                         </div>
                         <div className="centerText paddingT20">
-                            <button className="loginSubmitBtn" type="submit">Submit Order</button>
+                            <button className="loginSubmitBtn" type="submit">Sign in</button>
                         </div>
+                        <p className="centerText bottomLogin"><a href="/signup">
+                            Don't have an account? Sign up!
+                        </a></p>
                     </form>
                 </div>
             </div>

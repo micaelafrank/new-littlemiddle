@@ -106,6 +106,7 @@ input {
   padding-top: 20px;
 }
 
+
 .form-spacing {
   margin-left: auto;
   margin-right: auto;
@@ -223,9 +224,10 @@ input {
 
 .logo-img-container {
   width: 730px;
-  height: 720px;
+  height: 722px;
   /* margin-right: 20px; */
 }
+
 
 @media only screen and (max-width: 500px) {
   .logo-img-container {
@@ -236,6 +238,12 @@ input {
     margin-bottom: 2rem;
   }
 }
+/* 
+.logo-img-container-signup {
+  width: 660px;
+  height: 650px;
+  bottom: 0;
+} */
 
 .logo-image {
   background-image: url('images/challah-logo.png');
@@ -283,18 +291,51 @@ input {
   }
 }
 
+.loginForm {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
 .loginCouplet{
   display: flex;
-  width: 90%;
+  /* width: 95%; */
+  justify-content: space-around;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.SUCouplet{
+  display: flex;
+  max-width: 600px;
+  align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  margin: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.SU-label {
+  margin-right: .5rem;
+  font-size: 20px;
+  letter-spacing: 1.4px;
+}
+
+.SU-input{
+  font-family: fantasy;
+  letter-spacing: 1.6px;
+  padding-left: 15px;
+  font-size: 16px;
 }
 
 .loginLabel{
   margin-right: .5rem;
-  font-size: 22px;
-  letter-spacing: 2px;
+  font-size: 20px;
+  letter-spacing: 1.4px;
 }
 
 .loginInput{
@@ -316,6 +357,18 @@ input {
   margin: 0 2rem;
 }
 
+.flexBoxColumnSUInfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: left;
+    /* margin: 0 2rem; */
+}
 
 
 .info-blurb {
@@ -367,6 +420,20 @@ input {
     letter-spacing: 1.8px;
     margin-bottom: 1.6rem;
     text-align: center;
+}
+
+.SUtitle{
+  color: rgb(206, 162, 133);
+  text-shadow: 1.5px 1px black;
+  font-family: fantasy;
+  font-size: 37px;
+  font-weight: normal;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 1.8px;
+  margin-bottom: 2.2rem;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 .pageTitle {
@@ -614,4 +681,11 @@ input#donation {
   font-weight: bold;
   text-shadow: 0.5px 0.5px black;
   border: 3px solid rgb(206, 162, 133);
+}
+
+.bottomLogin{
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 2.5rem;
 }
