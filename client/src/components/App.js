@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Login from './Login';
 import OrderForm from './OrderForm';
@@ -13,6 +13,8 @@ import SignUp from './SignUp';
 
 
 function App() {
+  const [user, setUser] = useState({});
+
   const curr = new Date();
   const today = `${curr.getMonth() + 1}/${curr.getDate()}/${curr.getFullYear()}`;
   console.log("today's date: ", today);
@@ -30,14 +32,26 @@ function App() {
 
   console.log("next week's order will open on sunday: ", nextSunDate);
 
+  useEffect(() => {
+    fetch("/api/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    })
+  }, [])
+  console.log(user);
+
+  function onLogin(user) {
+    setUser(user)
+  }
 
   return (
     <div>
       <Routes>
         <Route element={<WithNav />}>
           <Route path="/" element={<Home friDate={friDate} nextSunDate={nextSunDate} />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login onLogin={onLogin} />} />
+          <Route path="/signup" element={<SignUp setUser={setUser} />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/order" element={<OrderForm friDate={friDate} />} />
           <Route path="/gallery" element={<ImageGallery />} />

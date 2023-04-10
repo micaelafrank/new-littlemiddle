@@ -2,10 +2,41 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-function Login() {
+function Login({ onLogin }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+
     const navigate = useNavigate();
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        //setIsLoading(true);
+        fetch("/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
+        }).then((r) => {
+            setIsLoading(false);
+            console.log("set is loading false")
+            if (r.ok) {
+                console.log("i am in the r.ok file")
+                r.json().then((user) => {
+                    onLogin(user)
+                    navigate("/");
+                });
+                setUsername("")
+                setPassword("")
+            } else {
+                r.json().then((err) => setError(err.error));
+                console.log("my error: ", error.messages)
+            }
+        });
+    }
+    console.log(error)
 
     return (
         <div className="homepage-layout">
@@ -18,7 +49,8 @@ function Login() {
                 </div>
                 <div className="flexBoxColumnLoginInfo">
                     <h1 className="loginTitle">Login</h1>
-                    <form className="loginForm">
+                    <form onSubmit={handleSubmit} className="loginForm">
+                        <p className="errorMessage">{error}</p>
                         <div className="loginCouplet">
                             <label className="loginLabel">Username:</label>
                             <input className="loginInput"

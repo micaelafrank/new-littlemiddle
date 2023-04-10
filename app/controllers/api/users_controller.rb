@@ -1,11 +1,10 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
     skip_before_action :authorize, only: :create
-    
+    rescue_from ActiveRecord::RecordNotFound, with: :user_not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :user_invalid
+
     def create
         user = User.create!(user_params)
-        if user then
-            Cart.create!(user_id: user.id)
-        end
         session[:user_id] = user.id
         render json: user, status: :created
     end
@@ -16,13 +15,16 @@ class UsersController < ApplicationController
 
     private
 
-    def authorize
-        @current_user = User.find_by(id: session[:user_id])
-        render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
-    end
-
     def user_params
         params.permit(:username, :password, :password_confirmation, :firstName, :lastName, :email, :phone, :is_admin)
+    end
+
+    def user_not_found(e)
+        render json: { errors: e.message}, status: :no_content
+    end
+
+    def user_invalid(invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
     end
 
 end

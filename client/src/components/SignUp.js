@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-function SignUp() {
+function SignUp({ setUser }) {
     // const [username, setUsername] = useState("");
     // const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -16,6 +16,24 @@ function SignUp() {
 
     const navigate = useNavigate();
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch("/api/signup", {
+            method: 'POST',
+            body: ({ firstName, lastName, password, password_confirmation, phone, email, username })
+        })
+        .then((r) => {
+            if (r.ok) {
+                console.log("i am in the r.ok file")
+                r.json().then((data) => {
+                    setUser(data)
+                    navigate("/");
+                })}
+            else {
+            r.json().then((err) => setErrors(err.errors));
+            }
+            })}
+
     return (
         <div className="homepage-layout">
             <div className="flexBoxRow">
@@ -26,8 +44,9 @@ function SignUp() {
                     </div>
                 </div>
                 <div className="flexBoxColumnSUInfo">
-                    <form className="loginForm">
+                    <form className="loginForm" onClick={handleSubmit}>
                         <h1 className="SUtitle">Sign Up</h1>
+                        <p className="errorMessage">{errors}</p>
                         <div className="SUCouplet">
                             <label className="SU-label">First name:</label>
                             <input className="SU-input"
@@ -95,7 +114,7 @@ function SignUp() {
                         <div className="SUCouplet">
                             <label className="loginLabel">Confirm password:</label>
                             <input className="loginInput"
-                                type="text"
+                                type="password"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 id="username"
