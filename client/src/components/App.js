@@ -35,23 +35,23 @@ function App() {
   useEffect(() => {
     fetch("/api/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((data) => setUser(data));
       }
     })
   }, [])
   console.log(user);
 
-  function onLogin(user) {
-    setUser(user)
-  }
+  // function onLogin(user) {
+  //   setUser(user)
+  // }
 
   return (
     <div>
       <Routes>
         <Route element={<WithNav />}>
           <Route path="/" element={<Home friDate={friDate} nextSunDate={nextSunDate} />} />
-          <Route path="/login" element={<Login onLogin={onLogin} />} />
-          <Route path="/signup" element={<SignUp setUser={setUser} />} />
+          <Route path="/login" element={<Login user={user} onLogin={setUser} />} />
+          <Route path="/signup" element={<SignUp onSignUp={setUser} user={user} />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/order" element={<OrderForm friDate={friDate} />} />
           <Route path="/gallery" element={<ImageGallery />} />
