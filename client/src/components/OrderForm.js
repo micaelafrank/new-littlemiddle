@@ -78,15 +78,15 @@ function OrderForm({ friDate }) {
             className="form-spacing">
                 <div className="centerContent">
                     <div className="form-heading form-date">
-                        <p style={{ fontFamily: "monospace" }}>insert braid detail image here</p>
+                        {/* <p style={{ fontFamily: "monospace" }}>insert braid detail image here</p> */}
                         <h1 className="pageTitle">Order Form</h1>
-                        <p className="form-subtitle boldText">{friDate}</p>
+                        <p className="form-subtitle">For pickup on {friDate}</p>
                     </div>
-                    <p className="centerText uppercaseText width70 paddingB30">Order forms open every Sunday at 12:00 PM PT and close on Thursdays at 5:00 PM PT.</p>
+                    {/* <p className="centerText uppercaseText width70 paddingB30">Order close on Thursdays at 5:00 PM PT.</p> */}
                     <div className="form-couplet">
                         <label className="form-label">First Name:</label>
                         <input type="text"
-                            placeholder="First Name"
+                            placeholder="First Name" className="orderFormInput"
                             name="firstName"
                             require="true"
                             id="firstName"
@@ -95,7 +95,7 @@ function OrderForm({ friDate }) {
                     </div>
                     <div className="form-couplet">
                         <label className="form-label">Last Name:</label>
-                        <input type="text" require="true"
+                        <input type="text" require="true" className="orderFormInput"
                             placeholder="Last Name"
                             name="lastName"
                             id="lastName"
@@ -144,7 +144,7 @@ function OrderForm({ friDate }) {
                     </div> */}
                     <div className="form-couplet">
                         <label className="form-label">Email:</label>
-                        <input type="email" placeholder="Email"
+                        <input type="email" placeholder="Email" className="orderFormInput"
                             require="true"
                             name="email"
                             id="email"
@@ -154,7 +154,7 @@ function OrderForm({ friDate }) {
                     </div>
                     <div className="form-couplet">
                         <label className="form-label">Phone Number:</label>
-                        <input type="tel" placeholder="Phone Number"
+                        <input type="tel" placeholder="Phone Number" className="orderFormInput"
                             name="phone"
                             id="phone"
                             value={phone}
@@ -163,7 +163,7 @@ function OrderForm({ friDate }) {
                     </div>
                     <div className="form-couplet">
                         <label className="form-label">Number of Olive Oil Rosemary Challahs:</label>
-                        <input type="number" require="true"
+                        <input type="number" require="true" className="orderFormInput"
                             name="plain" style={{ paddingRight: "0" }}
                             id="plain" max={6}
                             placeholder="0"
@@ -173,7 +173,7 @@ function OrderForm({ friDate }) {
                     </div>
                     <div className="form-couplet">
                         <label className="form-label">Number of Chocolate Chip Challahs:</label>
-                        <input type="number" require="true" placeholder="0"
+                        <input type="number" require="true" placeholder="0" className="orderFormInput"
                             name="chocChip" style={{ paddingRight: "0" }}
                             id="chocChip" max={6}
                             value={chocChip}
@@ -183,7 +183,7 @@ function OrderForm({ friDate }) {
                     <div className="form-couplet">
                         <label className="form-label">Donation pledge:</label>
                         <input
-                            type="number" require="true" placeholder="$"
+                            type="number" require="true" placeholder="$0" className="orderFormInput"
                             name="donation"
                             id="donation"
                             value={donation}
