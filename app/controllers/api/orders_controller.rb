@@ -1,10 +1,14 @@
 class Api::OrdersController < ApplicationController
 
+    #GET (all orders) "/api/orders"
     def index
         orders = Order.all.order(id: :desc)
         render json: orders 
     end
 
+    #GET (all of a specific user's orders) "/api/orders/:user_id" (search by user id)
+
+    #GET a specific order "/api/orders/:id" (search by order id)
     def show
         order = Order.find(params[:id])
         render json: order

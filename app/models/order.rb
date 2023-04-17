@@ -9,13 +9,8 @@ class Order < ApplicationRecord
     # validates :email, presence: true
     # validates_length_of :phone, in: 7..32, allow_blank: false
     # validates :total_order_count, on: :create, numericality: {less_than_or_equal_to: 6}
-    # validates :choc_challah_count, numericality: { only_integer: true }, length: less_than_or_equal_to: 3
-    # validates :plain_challah_count, numericality: { only_integer: true }, length: less_than_or_equal_to: 3
-
-    # validate :check_challah_number, on: :create
-    # validate :validate_order_count, on: :create
-
-    private
+    # validates :get_choc_count, numericality: { less_than_or_equal_to: 3 }
+    # validates :get_plain_count, numericality: { less_than_or_equal_to: 3 }
 
     # def get_order_date
     #     date = Order.sale_date_id
@@ -23,6 +18,16 @@ class Order < ApplicationRecord
     #     day = SaleDate.find(date).day
     #     year = SaleDate.find(date).year
     # end
+
+    def get_choc_count
+      chocNum = ChocChipChallah.find_by(order_id: params[:id]).quantity
+      puts "i am ordering #{chocNum} chocolate chip challahs!"
+    end
+
+    def get_plain_count
+      plainNum = PlainChallah.find_by(order_id: params[:id]).quantity
+      puts "i am ordering #{plainNum} plain challahs!"
+    end
 
 
     # def validate_order_count
