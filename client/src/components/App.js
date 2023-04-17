@@ -14,6 +14,25 @@ import SignUp from './SignUp';
 
 function App() {
   const [user, setUser] = useState({});
+  const [orders, setOrders] = useState([]);
+
+
+  useEffect(() => {
+    fetch("/api/me").then((r) => {
+      if (r.ok) {
+        r.json().then((data) => setUser(data));
+      }
+    })
+  }, [])
+  console.log(user);
+
+  useEffect(() => {
+    fetch("/api/orders")
+      .then(res => res.json())
+      .then(data => { setOrders(data) })
+  }, [])
+  console.log("orders: ", orders)
+
 
   const curr = new Date();
   const today = `${curr.getMonth() + 1}/${curr.getDate()}/${curr.getFullYear()}`;
@@ -32,14 +51,6 @@ function App() {
 
   console.log("next week's order will open on sunday: ", nextSunDate);
 
-  useEffect(() => {
-    fetch("/api/me").then((r) => {
-      if (r.ok) {
-        r.json().then((data) => setUser(data));
-      }
-    })
-  }, [])
-  console.log(user);
 
   // function onLogin(user) {
   //   setUser(user)

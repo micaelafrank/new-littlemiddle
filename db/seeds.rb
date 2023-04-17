@@ -8,17 +8,13 @@
 
 User.destroy_all
 Order.destroy_all
+puts "destroyed"
 
+mic = User.create!(username: "mfrankm", lastName: "Fango", firstName: "Micah", email: "micfrank@gmail.com", phone: 18185549859, password_digest: "123")
 
-user = User.create!(username: "mfrankm", lastName: "Fango", firstName: "Micah", email: "micfrank@gmail.com", phone: 18185549859, password_digest: "123")
+micsorder = Order.create!(user_id: mic.id, donation: 20, order_date: "April 16, 2023")
 
+plainFlav = PlainChallah.create!(order_id: micsorder.id, quantity: 2)
+chocChipFlav = ChocChipChallah.create!(order_id: micsorder.id, quantity: 1)
 
-users = User.all 
-micaela = User.first 
-
-order = Order.create!(user_id: micaela.id, donation: 20, order_date: "April 16, 2023")
-
-firstOrder = Order.first 
-
-plainFlav = PlainChallah.create!(order_id: firstOrder.id, quantity: 2)
-chocChipFlav = ChocChipChallah.create!(order_id: firstOrder.id, quantity: 1)
+puts "done seeding!"
