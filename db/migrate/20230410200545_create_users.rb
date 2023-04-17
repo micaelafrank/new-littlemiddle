@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :firstName
       t.string :lastName
       t.string :email
-      t.string :phone 
+      t.bigint :phone 
       t.boolean :is_admin, :default => false
       t.string :password_digest 
       t.timestamps
