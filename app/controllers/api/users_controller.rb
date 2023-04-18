@@ -1,7 +1,13 @@
 class Api::UsersController < ApplicationController
-    skip_before_action :authorize, only: :create
+    skip_before_action :authorize, only: [:create, :index]
     rescue_from ActiveRecord::RecordNotFound, with: :user_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :user_invalid
+
+    def index
+        users = User.all.order(id: :desc)
+        render json: users 
+    end 
+
 
     def create
         user = User.create!(user_params)

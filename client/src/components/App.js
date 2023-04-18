@@ -15,16 +15,27 @@ import SignUp from './SignUp';
 function App() {
   const [user, setUser] = useState({});
   const [orders, setOrders] = useState([]);
-
+  const [customers, setCustomers] = useState([])
 
   useEffect(() => {
     fetch("/api/me").then((r) => {
       if (r.ok) {
-        r.json().then((data) => setUser(data));
+        r.json().then((user) => setUser(user));
       }
     })
   }, [])
   console.log(user);
+
+
+  useEffect(() => {
+    fetch("/api/users").then((r) => {
+      if (r.ok) {
+        r.json().then((customers) => setCustomers(customers));
+      }
+    })
+  }, [])
+  console.log("all users: ", customers);
+
 
   useEffect(() => {
     fetch("/api/orders")
@@ -52,16 +63,16 @@ function App() {
   console.log("next week's order will open on sunday: ", nextSunDate);
 
 
-  // function onLogin(user) {
-  //   setUser(user)
-  // }
+  function onLogin(user) {
+    setUser(user)
+  }
 
   return (
     <div>
       <Routes>
-        <Route element={<WithNav />}>
+        <Route element={<WithNav user={user} setUser={setUser} />}>
           <Route path="/" element={<Home friDate={friDate} nextSunDate={nextSunDate} />} />
-          <Route path="/login" element={<Login user={user} onLogin={setUser} />} />
+          <Route path="/login" element={<Login user={user} setUser={setUser} />} />
           <Route path="/signup" element={<SignUp onSignUp={setUser} user={user} />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/order" element={<OrderForm friDate={friDate} />} />

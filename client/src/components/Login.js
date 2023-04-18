@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 
-function Login({ onLogin, user }) {
+function Login({ onLogin, setUser, user }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -20,13 +20,13 @@ function Login({ onLogin, user }) {
             },
             body: JSON.stringify({ username, password }),
         }).then((r) => {
-            setIsLoading(false);
+            // setIsLoading(false);
             console.log("set is loading false")
             if (r.ok) {
                 console.log("i am in the r.ok file")
                 r.json().then((user) => {
                     onLogin(user)
-                    navigate("/");
+                    navigate("/home");
                 });
                 setUsername("")
                 setPassword("")
